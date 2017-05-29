@@ -1,7 +1,23 @@
 # Selective Classification for Deep Neural Networks
-Code for the paper ["Selective Classification for Deep Neural Networks"](https://arxiv.org/abs/1705.08500). This code was used for the experiments in sections 5.1 and 5.2.
+By Yonatan Geifman and Ran El-Yaniv
+Technion
+### Introduction:
+This repository contains the implementation of  VGG-16 models for CIFAR-10 and CIFAR-100 and the risk bound proposed in the paper ["Selective Classification for Deep Neural Networks"](https://arxiv.org/abs/1705.08500). 
 
-Weights files:
+### Citation
+
+If you use these models in your research, please cite:
+
+@ARTICLE{2017arXiv170508500G,
+    author = {{Geifman}, Y. and {El-Yaniv}, R.},
+    title = "{Selective Classification for Deep Neural Networks}",
+    journal = {ArXiv e-prints},
+    archivePrefix = "arXiv",
+    eprint = {1705.08500},
+    year = 2017
+}
+
+###Weights files:
 
 [cifar-100 weights](https://drive.google.com/open?id=0B4odNGNGJ56qTEdnT1RjTU44Zms)
 
