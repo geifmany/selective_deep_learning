@@ -17,7 +17,7 @@ If you use these models in your research, please cite:
         year = 2017
     }
 
-###Weights files:
+### Weights files:
 
 [cifar-100 weights](https://drive.google.com/open?id=0B4odNGNGJ56qTEdnT1RjTU44Zms)
 
