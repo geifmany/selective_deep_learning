@@ -9,7 +9,7 @@ import random
 class risk_control:
 
     def calculate_bound(self,delta,m,erm):
-        #This function is a solver for the inverse of binomial CDF using binary search.
+        #This function is a solver for the inverse of binomial CDF based on binary search.
         persicion = 1e-7
         def func(b):
             return (-1*delta) + scipy.stats.binom.cdf(int(m*erm),m,b)
@@ -27,13 +27,13 @@ class risk_control:
         return b
 
     def bound(self,rstar,delta,kappa,residuals,split=True):
-        # A function to calculate the bound
+        # A function to calculate the risk bound proposed in the paper, the algorithm is based on algorithm 1 from the paper.
         #Input: rstar - the requested risk bound
         #       delta - the desired delta
         #       kappa - rating function over the points (higher values is more confident prediction)
         #       residuals - a vector of the residuals of the samples 0 is correct prediction and 1 corresponding to an error
         #       split - is a boolean controls whether to split train and test
-        #Output - void (prints latex text for tables in the paper)
+        #Output - [theta, bound] (also prints latex text for the tables in the paper)
 
         # when spliting to train and test this represents the fraction of the validation size
         valsize = 0.5
@@ -59,6 +59,7 @@ class risk_control:
         deltahat = delta/math.ceil(math.log2(m))
 
         for q in range(math.ceil(math.log2(m))+1):
+            # the for runs log(m)+1 iterations but actually the bound calculated on only log(m) different candidate thetas
             mid = math.ceil((a+b)/2)
 
             mi = len(FY[probs_idx_sorted[mid:]])
@@ -73,13 +74,12 @@ class risk_control:
                 a=mid
             else:
                 b=mid
-        print(b-mid)
 
         if split:
             print("%.2f & %.4f & %.4f & %.4f & %.4f & %.4f  \\\\" % (rstar,risk,coverage,testrisk,testcov,bound))
         else:
             print("%.2f & %.4f & %.4f & %.4f   \\\\" % (rstar,risk,coverage,bound))
-
+        return [theta,bound]
 
 
 

@@ -213,15 +213,16 @@ if __name__ == '__main__':
 
     y_train = keras.utils.to_categorical(y_train, 10)
     y_test = keras.utils.to_categorical(y_test, 10)
-    #change train to false when using weights file.
+
     model = cifar10vgg(train=True)
 
     predicted_x = model.predict(x_test)
     kappa = np.max(predicted_x,1)
     residuals = (np.argmax(predicted_x,1)!=np.argmax(y_test,1))
     bound_cal = risk_control()
-    bound_cal.bound(0.02,delta,kappa,residuals)
-    bound_cal.bound(0.04,delta,kappa,residuals)
+    [theta, b_star] =bound_cal.bound(0.02,delta,kappa,residuals)
+    print(theta)
+    [theta, b_star] =bound_cal.bound(0.04,delta,kappa,residuals)
 
 
 
