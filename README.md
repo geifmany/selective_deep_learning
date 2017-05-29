@@ -8,14 +8,14 @@ This repository contains the implementation of  VGG-16 models for CIFAR-10 and C
 
 If you use these models in your research, please cite:
 
-@ARTICLE{2017arXiv170508500G,
-    author = {{Geifman}, Y. and {El-Yaniv}, R.},
-    title = "{Selective Classification for Deep Neural Networks}",
-    journal = {ArXiv e-prints},
-    archivePrefix = "arXiv",
-    eprint = {1705.08500},
-    year = 2017
-}
+    @ARTICLE{2017arXiv170508500G,
+        author = {{Geifman}, Y. and {El-Yaniv}, R.},
+        title = "{Selective Classification for Deep Neural Networks}",
+        journal = {ArXiv e-prints},
+        archivePrefix = "arXiv",
+        eprint = {1705.08500},
+        year = 2017
+    }
 
 ###Weights files:
 
