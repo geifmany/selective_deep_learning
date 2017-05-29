@@ -215,8 +215,8 @@ if __name__ == '__main__':
 
     y_train = keras.utils.to_categorical(y_train, 100)
     y_test = keras.utils.to_categorical(y_test, 100)
-
-    model = cifar100vgg(train=False)
+    #change train to False when using a weights file.
+    model = cifar100vgg(train=True)
 
     predicted_x = model.predict(x_test)
     kappa = np.max(predicted_x,1)
