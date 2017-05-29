@@ -1,6 +1,6 @@
 # Selective Classification for Deep Neural Networks
 By Yonatan Geifman and Ran El-Yaniv
-Technion
+
 ### Introduction:
 This repository contains the implementation of  VGG-16 models for CIFAR-10 and CIFAR-100 and the risk bound proposed in the paper ["Selective Classification for Deep Neural Networks"](https://arxiv.org/abs/1705.08500). 
 
