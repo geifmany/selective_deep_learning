@@ -10,15 +10,18 @@ class risk_control:
 
     def calculate_bound(self,delta,m,erm):
         #This function is a solver for the inverse of binomial CDF based on binary search.
-        persicion = 1e-7
+        precision = 1e-7
         def func(b):
             return (-1*delta) + scipy.stats.binom.cdf(int(m*erm),m,b)
         a=erm #start binary search from the empirical risk
         c=1   # the upper bound is 1
         b = (a+c)/2 #mid point
         funcval  =func(b)
-        while abs(funcval)>persicion:
-            if funcval>0:
+        while abs(funcval)>precision:
+            if a == 1.0 and c == 1.0:
+                b = 1.0
+                break
+            elif funcval>0:
                 a=b
             else:
                 c=b
